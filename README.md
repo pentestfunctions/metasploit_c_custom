@@ -100,7 +100,3 @@ Detection rates by compiler/flags:
 ## Disclaimer
 
 This code is provided for educational purposes only. Use only on systems you own or have permission to test. Unauthorized access to computer systems is illegal and unethical.
-
-## License
-
-MIT
